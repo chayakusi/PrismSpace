@@ -27,10 +27,10 @@ function Questionnaire() {
     left: '0',
     right:'0',
     margin: 'auto'}}>
-   <div class="card text-dark bg-light" >
+   <div class="card text-dark bg-light mb-3" >
       {currentQuestion < questions.length && (
         <div class = "container">
-          <h4 class="card-title">{questions[currentQuestion].question}</h4>
+          <h5 class="card-title">{questions[currentQuestion].question}</h5>
           {questions[currentQuestion].options.map(option => (
                 <Button type="button" class="btn btn-info me-10" onClick={() => handleResponse(option)}>{option}</Button>
           ))}
