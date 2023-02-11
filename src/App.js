@@ -4,6 +4,7 @@ import Home from './Home';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import './App.css';
 import image from '../src/assets/background.png'
+import ConsultationForm from './consultation';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           {<Route path="/" element={<ArticleFeed />} />}
           <Route path="/home" element={<Home />} />
           <Route path="/questionnaire" element={<Questionnaire />} />
+          <Route path="/consultation" element={<ConsultationForm />} />
         </Routes>
       </Router>
       </header>

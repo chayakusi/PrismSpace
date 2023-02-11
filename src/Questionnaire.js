@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Button from 'react-bootstrap/Button';
 import { useNavigate } from "react-router-dom";
 
 const questions = [
@@ -32,20 +31,21 @@ export default function Questionnaire() {
         }
       }
   }
-
+  const styleobj = 
+  {overflow:'hidden',width:'50vw', height:'30vh',position: 'absolute',
+  top:'0',
+  bottom: '0',
+  left: '0',
+  right:'0',
+  margin: 'auto'};
   return (
-    <div style={{overflow:'hidden',width:'50vw', height:'30vh',position: 'absolute',
-        top:'0',
-        bottom: '0',
-        left: '0',
-        right:'0',
-        margin: 'auto'}}>
-    <div class="card text-dark bg-light" >
+    <div style={styleobj}>
+    <div class="card text-dark bg-light" style={{padding:'1rem'}} >
         {currentQuestion < questions.length && (
             <div className = "container">
             <h4 class="card-title">{questions[currentQuestion].question}</h4>
             {questions[currentQuestion].options.map(option => (
-                    <Button type="button" class="btn btn-info me-10" onClick={() => handleResponse(option)}>{option}</Button>
+            <button type="submit" className="btn btn-primary" style={{margin:'0.2rem'}} onClick={() => handleResponse(option)}>{option}</button>
             ))}
             </div>
         )}
