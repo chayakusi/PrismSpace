@@ -1,65 +1,40 @@
 import React, { useState } from 'react';
-const Questionnaire = () => {
-  const [answers, setAnswers] = useState({});
-  const questions = [
-    {
-      id: 1,
-      text: "What is your favorite color?",
-      options: [
-        { id: 1, text: "Red" },
-        { id: 2, text: "Green" },
-        { id: 3, text: "Blue" },
-        { id: 4, text: "Yellow" }
-      ]
-    },
-    {
-      id: 2,
-      text: "What is your favorite food?",
-      options: [
-        { id: 1, text: "Pizza" },
-        { id: 2, text: "Sushi" },
-        { id: 3, text: "Steak" },
-        { id: 4, text: "Salad" }
-      ]
-    },
-    {
-      id: 3,
-      text: "What is your favorite hobby?",
-      options: [
-        { id: 1, text: "Reading" },
-        { id: 2, text: "Running" },
-        { id: 3, text: "Painting" },
-        { id: 4, text: "Watching TV" }
-      ]
-    }
-  ];
 
-  const handleAnswer = (questionId, optionId) => {
-    setAnswers({ ...answers, [questionId]: optionId });
-  };
+const questions = [
+    { question: "Have you ever had feelings for a close friend who is the same gender as you?", options: ["Yes", "No"] },
+    { question: "Have you ever engaged in behavior deemed homosexual?", options: ["Yes", "No"] },
+    { question: "Have you ever kissed or desired to kiss someone who is the same gender as you?", options: ["Yes", "No", "Sometimes"] },
+    { question: "Has anyone ever questioned your sexual orientation?", options: ["Yes", "No"] },
+    { question: "Do you see content from queer creators, when you scroll through your feed?", options: ["Yes", "No"] },
+    { question: "Do you like to do things that are generally associated with the opposite sex (such as, wearing a bra if you're a guy)?", options: ["Yes", "No"] },
+    { question: "Would you watch any porn with both actors of your gender?", options: ["Yes", "No"] },
+    { question: "Have you ever been interested in the physique of a person who is your same sex?", options: ["Yes", "No"] }
+];
+
+function Questionnaire() {
+  const [currentQuestion, setCurrentQuestion] = useState(0);
+  const [responses, setResponses] = useState([]);
+
+  function handleResponse(response) {
+    setResponses([...responses, response]);
+    setCurrentQuestion(currentQuestion + 1);
+  }
 
   return (
     <div>
-      {questions.map(question => (
-        <div key={question.id}>
-          <p>{question.text}</p>
-          {question.options.map(option => (
-            <div key={option.id}>
-              <input
-                type="radio"
-                name={question.id}
-                id={option.id}
-                value={option.id}
-                checked={answers[question.id] === option.id}
-                onChange={() => handleAnswer(question.id, option.id)}
-              />
-              <label htmlFor={option.id}>{option.text}</label>
-            </div>
+      {currentQuestion < questions.length && (
+        <div>
+          <p>{questions[currentQuestion].question}</p>
+          {questions[currentQuestion].options.map(option => (
+            <button onClick={() => handleResponse(option)}>{option}</button>
           ))}
         </div>
-      ))}
+      )}
+      {currentQuestion === questions.length && (
+        <p>Thank you for completing the questionnaire!</p>
+      )}
     </div>
   );
-};
+}
 
 export default Questionnaire;
