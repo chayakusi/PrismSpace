@@ -1,4 +1,4 @@
-
+import ArticleFeed from './Feed';
 import Questionnaire from './Questionnaire';
 import Home from './Home';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
@@ -17,7 +17,7 @@ function App() {
       <Router>
         <Routes>
           {/* <PrivateRoute exact path="/" element={<Dashboard/>} /> */}
-          {<Route path="/" element={<Questionnaire />} />}
+          {<Route path="/" element={<ArticleFeed />} />}
           <Route path="/home" element={<Home />} />
           <Route path="/questionnaire" element={<Questionnaire />} />
         </Routes>
