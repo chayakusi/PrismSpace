@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import Button from 'react-bootstrap/Button';
 const questions = [
     { question: "Have you ever had feelings for a close friend who is the same gender as you?", options: ["Yes", "No"] },
     { question: "Have you ever engaged in behavior deemed homosexual?", options: ["Yes", "No"] },
@@ -21,12 +21,18 @@ function Questionnaire() {
   }
 
   return (
-    <div>
+<div style={{overflow:'hidden',width:'50vw', height:'30vh',position: 'absolute',
+    top:'0',
+    bottom: '0',
+    left: '0',
+    right:'0',
+    margin: 'auto'}}>
+   <div class="card text-dark bg-light" >
       {currentQuestion < questions.length && (
-        <div>
-          <p>{questions[currentQuestion].question}</p>
+        <div class = "container">
+          <h4 class="card-title">{questions[currentQuestion].question}</h4>
           {questions[currentQuestion].options.map(option => (
-            <button onClick={() => handleResponse(option)}>{option}</button>
+                <Button type="button" class="btn btn-info me-10" onClick={() => handleResponse(option)}>{option}</Button>
           ))}
         </div>
       )}
@@ -34,6 +40,7 @@ function Questionnaire() {
         <p>Thank you for completing the questionnaire!</p>
       )}
     </div>
+</div>
   );
 }
 
