@@ -1,5 +1,7 @@
 
 import Questionnaire from './Questionnaire';
+import Home from './Home';
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import './App.css';
 import image from '../src/assets/background.png'
 
@@ -12,7 +14,14 @@ function App() {
       color: "#f5f5f5"
     }}>
       <header>
-      <Questionnaire />
+      <Router>
+        <Routes>
+          {/* <PrivateRoute exact path="/" element={<Dashboard/>} /> */}
+          {<Route path="/" element={<Questionnaire />} />}
+          <Route path="/home" element={<Home />} />
+          <Route path="/questionnaire" element={<Questionnaire />} />
+        </Routes>
+      </Router>
       </header>
     </div>
   );
