@@ -1,7 +1,10 @@
 
 import Questionnaire from './Questionnaire';
+import Home from './Home';
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import './App.css';
 import image from '../src/assets/background.png'
+import ConsultationForm from './consultation';
 
 function App() {
   return (
@@ -12,7 +15,15 @@ function App() {
       color: "#f5f5f5"
     }}>
       <header>
-      <Questionnaire />
+      <Router>
+        <Routes>
+          {/* <PrivateRoute exact path="/" element={<Dashboard/>} /> */}
+          {<Route path="/" element={<Questionnaire />} />}
+          <Route path="/home" element={<Home />} />
+          <Route path="/questionnaire" element={<Questionnaire />} />
+          <Route path="/consultation" element={<ConsultationForm />} />
+        </Routes>
+      </Router>
       </header>
     </div>
   );

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import { useNavigate } from "react-router-dom";
 const ConsultationForm = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -14,9 +14,20 @@ const ConsultationForm = () => {
     setPhone('');
     setMessage('');
   };
-
+  const styleobj = 
+  {overflow:'hidden',width:'40vw',height:"60vh",position: 'absolute',
+  top:'0',
+  bottom: '0',
+  left: '0',
+  right:'0',
+  margin: 'auto'};
+  const navigate = useNavigate();
   return (
-    <form onSubmit={handleSubmit}>
+    <div style={styleobj}> 
+    <h1>Request an Appointment</h1> 
+    <h5>If you would like to learn more, you can request an appointment with one of our counselors</h5>
+    <hr></hr>
+    <form onSubmit={handleSubmit} style={{color:'ActiveBorder'}}>
       <div className="form-group">
         <label htmlFor="name">Name</label>
         <input
@@ -62,9 +73,11 @@ const ConsultationForm = () => {
         />
       </div>
       <button type="submit" className="btn btn-primary">
-        Submit
+        Request
       </button>
+     
     </form>
+    </div>
   );
 };
 

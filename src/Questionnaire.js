@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import Button from 'react-bootstrap/Button';
+import { useNavigate } from "react-router-dom";
+
 const questions = [
     { question: "Have you ever had feelings for a close friend who is the same gender as you?", options: ["Yes", "No"] },
     { question: "Have you ever engaged in behavior deemed homosexual?", options: ["Yes", "No"] },
@@ -11,37 +12,45 @@ const questions = [
     { question: "Have you ever been interested in the physique of a person who is your same sex?", options: ["Yes", "No"] }
 ];
 
-function Questionnaire() {
+export default function Questionnaire() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [responses, setResponses] = useState([]);
+  const navigate = useNavigate();
+  
 
   function handleResponse(response) {
     setResponses([...responses, response]);
     setCurrentQuestion(currentQuestion + 1);
+    console.log(responses);
+    console.log(currentQuestion);
+    console.log(questions.length);
+    if(currentQuestion === questions.length - 1) {
+        var yes = responses.filter((ele) => ele === "Yes").length;
+        if(yes < 4) {
+            navigate('/home');
+        }
+      }
   }
-
+  const styleobj = 
+  {overflow:'hidden',width:'50vw', height:'30vh',position: 'absolute',
+  top:'0',
+  bottom: '0',
+  left: '0',
+  right:'0',
+  margin: 'auto'};
   return (
-<div style={{overflow:'hidden',width:'50vw', height:'30vh',position: 'absolute',
-    top:'0',
-    bottom: '0',
-    left: '0',
-    right:'0',
-    margin: 'auto'}}>
-   <div class="card text-dark bg-light mb-3" >
-      {currentQuestion < questions.length && (
-        <div class = "container">
-          <h5 class="card-title">{questions[currentQuestion].question}</h5>
-          {questions[currentQuestion].options.map(option => (
-                <Button type="button" class="btn btn-info me-10" onClick={() => handleResponse(option)}>{option}</Button>
-          ))}
+    <div style={styleobj}>
+    <div class="card text-dark bg-light" style={{padding:'1rem'}} >
+        {currentQuestion < questions.length && (
+            <div className = "container">
+            <h4 class="card-title">{questions[currentQuestion].question}</h4>
+            {questions[currentQuestion].options.map(option => (
+            <button type="submit" className="btn btn-primary" style={{margin:'0.2rem'}} onClick={() => handleResponse(option)}>{option}</button>
+            ))}
+            </div>
+        )}
+        
         </div>
-      )}
-      {currentQuestion === questions.length && (
-        <p>Thank you for completing the questionnaire!</p>
-      )}
     </div>
-</div>
   );
 }
-
-export default Questionnaire;
