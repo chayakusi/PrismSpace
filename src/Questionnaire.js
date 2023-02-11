@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-
 const Questionnaire = () => {
   const [answers, setAnswers] = useState({});
   const questions = [
