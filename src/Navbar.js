@@ -33,6 +33,9 @@ const Navbar = () => {
         <Link to="/community" style={{ textDecoration: "none" }}>
           <li className="nav-links">Community</li>
         </Link>
+        <Link to="/safespaces" style={{ textDecoration: "none" }}>
+          <li className="nav-links">Safespaces</li>
+        </Link>
       </ul>
     </div>
   </div>
