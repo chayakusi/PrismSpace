@@ -3,8 +3,9 @@ import Questionnaire from './Questionnaire';
 import Home from './Home';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import './App.css';
-import image from '../src/assets/background.png'
+import image from '../src/assets/background-final.png'
 import ConsultationForm from './consultation';
+import Events from './events';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/questionnaire" element={<Questionnaire />} />
           <Route path="/consultation" element={<ConsultationForm />} />
+          <Route path="/events" element={<Events />} />
         </Routes>
       </Router>
       </header>
