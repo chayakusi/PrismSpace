@@ -8,6 +8,7 @@ import ConsultationForm from './consultation';
 import Events from './events';
 import LandingPage from './landingpage';
 import LegalResources from './LegalResources';
+import Community from './Community';
 
 
 function App() {
@@ -15,13 +16,14 @@ function App() {
     <div style={{
       backgroundImage: 'url('+image+')',
       backgroundSize: 'cover',
+      backgroundRepeat: 'repeat',
+      backgroundPosition: '0 0',
       height: '100vh',
       color: "#f5f5f5"
     }}>
       <header>
       <Router>
         <Routes>
-          {/* <PrivateRoute exact path="/" element={<Dashboard/>} /> */}
           <Route path="/" element={<LandingPage />} />
           <Route path="/home" element={<Home />} />
           <Route path="/questionnaire" element={<Questionnaire />} />
@@ -29,6 +31,7 @@ function App() {
           <Route path="/events" element={<Events />} />
           <Route path="/articles" element={<ArticleFeed />} />
           <Route path="/resources" element={<LegalResources />} />
+          <Route path="/community" element={<Community />} />
         </Routes>
       </Router>
       </header>
