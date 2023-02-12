@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from "react-router-dom";
+import Navbar from "./Navbar";
 const ConsultationForm = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -21,8 +21,9 @@ const ConsultationForm = () => {
   left: '0',
   right:'0',
   margin: 'auto'};
-  const navigate = useNavigate();
   return (
+    <div>
+    <Navbar/>
     <div style={styleobj}> 
     <h1>Request an Appointment</h1> 
     <h5>If you would like to learn more, you can request an appointment with one of our counselors</h5>
@@ -77,6 +78,7 @@ const ConsultationForm = () => {
       </button>
      
     </form>
+    </div>
     </div>
   );
 };
