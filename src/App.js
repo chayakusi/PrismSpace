@@ -10,8 +10,8 @@ function App() {
   return (
     <div style={{
       backgroundImage: 'url('+image+')',
-      backgroundSize: "cover",
-      height: "100vh",
+      backgroundSize: 'cover',
+      height: '100vh',
       color: "#f5f5f5"
     }}>
       <header>
