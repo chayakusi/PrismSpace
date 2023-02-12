@@ -6,6 +6,7 @@ import './App.css';
 import image from '../src/assets/background-final.png'
 import ConsultationForm from './consultation';
 import Events from './events';
+import LandingPage from './landingpage';
 
 function App() {
   return (
@@ -19,11 +20,12 @@ function App() {
       <Router>
         <Routes>
           {/* <PrivateRoute exact path="/" element={<Dashboard/>} /> */}
-          {<Route path="/" element={<ArticleFeed />} />}
+          {<Route path="/" element={<LandingPage />} />}
           <Route path="/home" element={<Home />} />
           <Route path="/questionnaire" element={<Questionnaire />} />
           <Route path="/consultation" element={<ConsultationForm />} />
           <Route path="/events" element={<Events />} />
+          {<Route path="/articles" element={<ArticleFeed />} />}
         </Routes>
       </Router>
       </header>
