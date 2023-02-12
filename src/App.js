@@ -10,6 +10,7 @@ import LandingPage from './landingpage';
 import LegalResources from './LegalResources';
 import Community from './Community';
 import Safespaces from './safespaces';
+import TipsParents from './tipsparents';
 
 
 function App() {
@@ -17,9 +18,7 @@ function App() {
     <div style={{
       backgroundImage: 'url('+image+')',
       backgroundSize: 'cover',
-      backgroundRepeat: 'repeat',
-      backgroundPosition: '0 0',
-      height: '100vh',
+      height: '140vh',
       color: "#f5f5f5"
     }}>
       <header>
@@ -34,6 +33,7 @@ function App() {
           <Route path="/resources" element={<LegalResources />} />
           <Route path="/community" element={<Community />} />
           <Route path="/safespaces" element={<Safespaces />} />
+          <Route path="/parentaltips" element={<TipsParents />} />
         </Routes>
       </Router>
       </header>
