@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import './App.css';
 import image from '../src/assets/background.png'
 import ConsultationForm from './consultation';
+import LegalResources from './LegalResources';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/questionnaire" element={<Questionnaire />} />
           <Route path="/consultation" element={<ConsultationForm />} />
+          <Route path="/resources" element={<LegalResources />} />
         </Routes>
       </Router>
       </header>
