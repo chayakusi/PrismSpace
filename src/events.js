@@ -38,7 +38,7 @@ const EventsPage = () => {
                   </div>  
                   <div class="col-md-1"></div>
                   <div class="col-md-6">
-                  <button type="submit" className="btn btn-primary">Register</button>
+                  <button type="submit" className="btn btn-primary" onClick={() => { window.location.href = event.link; } }>Register</button>
                   </div>  
         
                      </div>  

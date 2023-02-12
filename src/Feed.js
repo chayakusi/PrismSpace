@@ -13,6 +13,7 @@ const ArticleFeed = () => {
 
   return (
     <div>
+      
         <Navbar/>
         
         <div style={styleobj}>

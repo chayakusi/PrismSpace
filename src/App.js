@@ -8,6 +8,7 @@ import ConsultationForm from './consultation';
 import Events from './events';
 import LandingPage from './landingpage';
 import LegalResources from './LegalResources';
+import Community from './Community';
 import Safespaces from './safespaces';
 import TipsParents from './tipsparents';
 
@@ -23,7 +24,6 @@ function App() {
       <header>
       <Router>
         <Routes>
-          {/* <PrivateRoute exact path="/" element={<Dashboard/>} /> */}
           <Route path="/" element={<LandingPage />} />
           <Route path="/home" element={<Home />} />
           <Route path="/questionnaire" element={<Questionnaire />} />
@@ -31,6 +31,7 @@ function App() {
           <Route path="/events" element={<Events />} />
           <Route path="/articles" element={<ArticleFeed />} />
           <Route path="/resources" element={<LegalResources />} />
+          <Route path="/community" element={<Community />} />
           <Route path="/safespaces" element={<Safespaces />} />
           <Route path="/parentaltips" element={<TipsParents />} />
         </Routes>
