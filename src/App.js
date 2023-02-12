@@ -7,6 +7,8 @@ import image from '../src/assets/background-final.png'
 import ConsultationForm from './consultation';
 import Events from './events';
 import LandingPage from './landingpage';
+import LegalResources from './LegalResources';
+
 
 function App() {
   return (
@@ -20,12 +22,13 @@ function App() {
       <Router>
         <Routes>
           {/* <PrivateRoute exact path="/" element={<Dashboard/>} /> */}
-          {<Route path="/" element={<LandingPage />} />}
+          <Route path="/" element={<LandingPage />} />
           <Route path="/home" element={<Home />} />
           <Route path="/questionnaire" element={<Questionnaire />} />
           <Route path="/consultation" element={<ConsultationForm />} />
           <Route path="/events" element={<Events />} />
-          {<Route path="/articles" element={<ArticleFeed />} />}
+          <Route path="/articles" element={<ArticleFeed />} />
+          <Route path="/resources" element={<LegalResources />} />
         </Routes>
       </Router>
       </header>

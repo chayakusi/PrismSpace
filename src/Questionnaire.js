@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom";
-
+import Navbar from "./Navbar";
 const questions = [
     { question: "Have you ever had feelings for a close friend who is the same gender as you?", options: ["Yes", "No"] },
     { question: "Have you ever engaged in behavior deemed homosexual?", options: ["Yes", "No"] },
@@ -27,7 +27,10 @@ export default function Questionnaire() {
     if(currentQuestion === questions.length - 1) {
         var yes = responses.filter((ele) => ele === "Yes").length;
         if(yes < 4) {
-            navigate('/home');
+            navigate('/consultation?yes=1');
+        }
+        else{
+            navigate('/consultation?yes=0');
         }
       }
   }
@@ -39,7 +42,11 @@ export default function Questionnaire() {
   right:'0',
   margin: 'auto'};
   return (
+     <div>
+    <Navbar/>
     <div style={styleobj}>
+    <h1>Let us help you identify yourself !</h1>
+    <hr></hr>
     <div class="card text-dark bg-light" style={{padding:'1rem'}} >
         {currentQuestion < questions.length && (
             <div className = "container">
@@ -51,6 +58,7 @@ export default function Questionnaire() {
         )}
         
         </div>
+    </div>
     </div>
   );
 }
