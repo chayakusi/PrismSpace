@@ -16,7 +16,7 @@ const Community = () => {
     <>
     <Navbar/>
     <div className="container" style={styleobj}>
-      <h1>Our Community</h1>
+      <h1>Let's break barriers and build bridges!</h1>
       <MemberGrid members={members} />
     </div>
     </>
