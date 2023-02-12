@@ -15,8 +15,8 @@ const Navbar = () => {
     </button>
     <div class="collapse navbar-collapse" id="navbarColor02">
       <ul class="navbar-nav me-auto">
-        <Link to="/home" style={{ textDecoration: "none" }}>
-          <li className="nav-links">Home</li>
+        <Link to="/" style={{ textDecoration: "none" }}>
+          <li className="nav-links">Feed</li>
         </Link>
         <Link to="/consultation" style={{ textDecoration: "none" }}>
           <li className="nav-links">Consultation</li>
