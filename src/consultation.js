@@ -32,15 +32,11 @@ const ConsultationForm = () => {
   
     <div style={styleobj}> 
     <h1>Request an Appointment</h1> 
-    <div class="alert alert-dismissible alert-info">
-  As per our survey, we identify you as 
-  {answer === "1" && <strong> Queer! </strong> }
-  {answer === "0" && <strong> Straight! </strong> }
-  <br></br>But, we might be not accurate always.
-</div>
+    {answer === "1" && <div class="alert alert-dismissible alert-info">  As per our survey, we identify you as <strong>Queer! </strong>  <br></br>But, we might be not accurate always.</div>  }
+    {answer === "0" && <div class="alert alert-dismissible alert-info">  As per our survey, we identify you as <strong>Straight! </strong>  <br></br>But, we might be not accurate always.</div>  }
     <h5>If you would like to learn more, you can request an appointment with one of our counselors</h5>
     <hr></hr>
-    <form onSubmit={handleSubmit} style={{color:'ActiveBorder'}}>
+    <form onSubmit={handleSubmit} style={{color:'black'}}>
       <div className="form-group">
         <label htmlFor="name">Name</label>
         <input

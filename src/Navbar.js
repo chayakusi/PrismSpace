@@ -9,13 +9,16 @@ const Navbar = () => {
   return (
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
   <div class="container-fluid">
-    <a class="navbar-brand" style={{fontWeight: "bold"}} href="#">PrismSpace</a>
+  <Link to="/" style={{ textDecoration: "none" }}>
+  <h4 style={{color:"white"}}>PrismSpace</h4>
+    </Link>
+  
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarColor02">
       <ul class="navbar-nav me-auto">
-        <Link to="/articles" style={{ textDecoration: "none" }}>
+        <Link to="/articles" style={{ textDecoration: "none",}}>
           <li className="nav-links">Feed</li>
         </Link>
         <Link to="/consultation" style={{ textDecoration: "none" }}>

@@ -13,8 +13,8 @@ const ArticleFeed = () => {
 
   return (
     <div>
-      
         <Navbar/>
+        
         <div style={styleobj}>
         <div class="card text-black mb-3">
         <h4 class="card-header">What's on your mind?</h4> 

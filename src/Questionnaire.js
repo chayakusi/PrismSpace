@@ -27,10 +27,10 @@ export default function Questionnaire() {
     if(currentQuestion === questions.length - 1) {
         var yes = responses.filter((ele) => ele === "Yes").length;
         if(yes < 4) {
-            navigate('/consultation?yes=1');
+            navigate('/consultation?yes=0');
         }
         else{
-            navigate('/consultation?yes=0');
+            navigate('/consultation?yes=1');
         }
       }
   }
