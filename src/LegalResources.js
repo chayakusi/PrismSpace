@@ -26,7 +26,7 @@ const LegalResources = () => {
           <Card.Text>
             {resource.content}
           </Card.Text>
-          <Card.Link href={resource.src}>Learn More</Card.Link>                 
+          <Card.Link href={resource.source}>Learn More</Card.Link>                 
         </Card.Body>
       </Card>
     </Col>
