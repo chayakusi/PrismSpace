@@ -9,6 +9,7 @@ import Events from './events';
 import LandingPage from './landingpage';
 import LegalResources from './LegalResources';
 import Community from './Community';
+import Safespaces from './safespaces';
 
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
           <Route path="/articles" element={<ArticleFeed />} />
           <Route path="/resources" element={<LegalResources />} />
           <Route path="/community" element={<Community />} />
+          <Route path="/safespaces" element={<Safespaces />} />
         </Routes>
       </Router>
       </header>
